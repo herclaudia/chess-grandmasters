@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import Loading from "../shared/Loading";
 import ErrorMessage from "../shared/ErrorMessage";
 import Link from "next/link";
+import ClockLastOnline from "./ClockLastOnline";
 
 type ProfilePageProps = {
   username: string;
@@ -53,6 +54,9 @@ const ProfilePage = ({ username }: ProfilePageProps) => {
       <div>Status: {data.status}</div>
       <div>Is Streamer: {data.is_streamer ? "Yes" : "No"}</div>
       <div>Verified: {data.verified ? "Yes" : "No"}</div>
+      <div>
+        Last online: <ClockLastOnline lastOnline={data.last_online} /> time ago.
+      </div>
     </>
   );
 };
